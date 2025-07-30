@@ -62,3 +62,6 @@ gem "tailwindcss-ruby", "3.4.17"
 
 # deviseの追加。ユーザー認証をdeviseで行っているため
 gem 'devise'
+
+#carrierwaveの追加。画像upload用
+gem 'carrierwave', '3.0.0'
