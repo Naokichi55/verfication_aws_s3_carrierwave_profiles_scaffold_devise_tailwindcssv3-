@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :rackets
-  resources :profiles, only: %i[create new index show]
+  resources :profiles, only: %i[create new index show update edit destroy]
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

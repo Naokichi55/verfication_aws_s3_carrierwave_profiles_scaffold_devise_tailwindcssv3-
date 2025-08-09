@@ -4,6 +4,9 @@
 </div>
 <div>
  <%= form_with model: @profile, class: "new_profile" do |f|  %>
+  <%= f.label :プロフィール画像 %>
+    <%= f.file_field :avataor %>
+    <%= f.hidden_field :avataor_cache %>
   <%= f.label :愛用ラケット %>
     <%= f.text_field :racket %>
   <%= f.label :テニス歴 %>
@@ -16,8 +19,8 @@
     <%= f.text_field :gender %>
   <%= f.label :その他 %>
     <%= f.text_field :body %>
- <%= f.submit :投稿 %>
+  <%= f.submit :投稿 %>
 </div>
 <% end %>
-<%= link_to 'プロフィール画面', profile_path(current_user.profile) %>
+
 

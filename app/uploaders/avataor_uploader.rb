@@ -3,7 +3,7 @@ class AvataorUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   #MiniMagickにて画像サイズを変更するため有効か
   include CarrierWave::MiniMagick
-  process resize_to_file:[200, 200] #アバターのサイズは200x200で考えているため有効化
+  process resize_to_fill:[200, 200] #アバターのサイズは200x200で考えているため有効化
 
   # Choose what kind of storage to use for this uploader:
 

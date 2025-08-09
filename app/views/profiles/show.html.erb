@@ -3,6 +3,7 @@
   <%= @profile.user.name %>
 </div>
 <div>
+  <%= image_tag @profile.avataor_url %>
   <%= @profile.racket %>
 	<%= @profile.history %>
 	<%= @profile.play_style %>
@@ -11,3 +12,5 @@
 	<%= @profile.body %>
 </div>
 <%= link_to 'トップページへ', rackets_path %>
+<%= link_to '編集' , edit_profile_path(@profile) %>
+<%= link_to '削除', profile_path(@profile) %>
