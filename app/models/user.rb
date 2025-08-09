@@ -5,4 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :rackets, dependent: :destroy
   has_one :profile, dependent: :destroy
+
+  #投稿者がログインユーザーと同じか確認するメソッドを定義
+  def own?(object)
+    id == object&.user_id
+  end
+
 end

@@ -26,7 +26,14 @@
 <% if user_signed_in? %>
   <%= link_to "プロフィール投稿画面へ", new_profile_path %>
   <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete} %>
+  <% if current_user.own?(@profile) %>
+      <%= link_to 'プロフィール画面', profile_path(current_user.profile) %>
+  <% else %>
+      <%= link_to 'プロフィール投稿画面', new_profile_path %>
+  <% end %>
 <% else %>
   <%= link_to "ログイン画面", user_session_path %>
   <%= link_to "ユーザー登録画面",  new_user_registration_path %>
 <% end %>
+
+
