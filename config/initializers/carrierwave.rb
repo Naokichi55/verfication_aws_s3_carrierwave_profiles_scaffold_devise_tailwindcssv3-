@@ -8,7 +8,7 @@ CarrierWave.configure do |config|
  if Rails.env.production?
 	config.storage = :fog
 	config.fog.provider = 'fog/aws'
-	config.fog_directory = '<% ENV['PROFILE_AWS_BUCKET'] %>'
+	config.fog_directory = '<%= ENV['PROFILE_AWS_BUCKET'] %>'
 	config.fog.credentials{
 		provider: 'AWS',
 		aws_access_key_id: '<%= ENV['AWS_ACCESS_KEY_ID'] %>',
