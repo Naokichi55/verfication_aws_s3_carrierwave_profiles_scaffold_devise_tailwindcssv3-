@@ -65,3 +65,6 @@ gem 'devise'
 
 #carrierwaveの追加。画像upload用
 gem 'carrierwave', '3.0.0'
+
+#carrierwaveでAmazon S3へ画像をアップロードするためのライブラリを追加。
+gem 'fog-aws'
