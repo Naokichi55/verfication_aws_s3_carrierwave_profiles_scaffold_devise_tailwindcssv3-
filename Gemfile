@@ -58,7 +58,7 @@ end
 
 # tailwindcss v3.4.17を導入
 gem "tailwindcss-rails"
-gem "tailwindcss-ruby", "3.4.17"
+gem "tailwindcss-ruby", "4.1.11"
 
 # deviseの追加。ユーザー認証をdeviseで行っているため
 gem 'devise'
