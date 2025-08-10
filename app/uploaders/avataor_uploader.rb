@@ -10,7 +10,7 @@ class AvataorUploader < CarrierWave::Uploader::Base
   #環境によってアップロード先を使い分ける
   if Rails.env.development?
     storage :file
-  elsif Tails.env.test?
+  elsif Rails.env.test?
     storage :file
   else
     storage :fog
