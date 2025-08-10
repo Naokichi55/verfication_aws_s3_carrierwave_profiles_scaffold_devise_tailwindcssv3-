@@ -5,20 +5,18 @@ require 'carrierwave/storage/fog'
 
 #保存先の分岐
 CarrierWave.configure do |config|
-#  if Rails.env.production?
-# 	config.storage = :fog
-# 	config.fog.provider = 'fog/aws'
-# 	config.fog.credentials{
-# 		#以下本番環境用にAWSの設定をしていないため一旦コメントアウト
-# 		# provider: 'AWS'
-# 		# aws_access_key_id: Rails.application.credentials.aws[:aws_access_key_id]
-# 		# aws_secret_access_key: Rails.application.credentials.aws[:aws_secret_access_key]
-# 		# region: 'your_region' #リビジョンを入れる
-# 	}
-# 	config.fog_directory = 'your_bucket_name'
-# 	config.asset_host = ''#AWS S3のパケット名
-# else
+ if Rails.env.production?
+	config.storage = :fog
+	config.fog.provider = 'fog/aws'
+	config.fog_directory = '<%= ENV['PROFILE_AWS_BUCKET'] %>'
+	config.fog.credentials{
+		provider: 'AWS'
+		aws_access_key_id: '<%= ENV['AWS_ACCESS_KEY_ID'] %>'
+		aws_secret_access_key: '<%= ENV['AWS_SECRET_ACCESS_KEY'] %>'
+		region: '<%= ENV['AWS_RESION'] %>'
+	}
+else
   config.storage :file #開発環境はpublic/uplodersに保存する
-	config.enable.processing:false if Rails.env.test?
-#  end
+	config.enable.processing = false if Rails.env.test?
+ end
 end
