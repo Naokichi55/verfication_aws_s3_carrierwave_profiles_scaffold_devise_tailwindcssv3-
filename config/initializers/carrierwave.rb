@@ -11,9 +11,9 @@ CarrierWave.configure do |config|
 	config.fog_directory = ENV['PROFILE_AWS_BUCKET']
 	config.fog_credentials = {
 		provider: 'AWS',
-		aws_access_key_id: '<%= ENV['AWS_ACCESS_KEY_ID'] %>',
-		aws_secret_access_key: '<%= ENV['AWS_SECRET_ACCESS_KEY'] %>',
-		region: '<%= ENV['AWS_RESION'] %>',
+		aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+		aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+		region: ENV['AWS_RESION'],
 	}
 else
   config.storage :file #開発環境はpublic/uplodersに保存する
