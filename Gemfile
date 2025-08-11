@@ -64,7 +64,7 @@ gem "tailwindcss-ruby", "3.4.17"
 gem 'devise'
 
 #carrierwaveの追加。画像upload用
-gem 'carrierwave', '3.0.0'
+gem 'carrierwave', '3.1.2'
 
 #carrierwaveでAmazon S3へ画像をアップロードするためのライブラリを追加。
 gem 'fog-aws'
