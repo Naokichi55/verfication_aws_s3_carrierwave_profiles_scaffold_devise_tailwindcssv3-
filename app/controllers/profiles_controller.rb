@@ -39,6 +39,6 @@ class ProfilesController < ApplicationController
 
 	private
   def profile_params
-		params.require(:profile).permit(:racket, :history, :play_style, :level, :gender, :body, :avataor)
+		params.require(:profile).permit(:racket, :history, :play_style, :level, :gender, :body, :avatar, :avataor)
   end
 end
