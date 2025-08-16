@@ -3,7 +3,13 @@
   <%= @profile.user.name %>
 </div>
 <div>
-  <%= image_tag @profile.avataor_url %>
+  <%= image_tag @profile.avatar.variant(resize_and_pad: [300, 300]), class: "rounded-full w-100 h-100" %>
+  <%= image_tag @profile.avatar.variant(resize_to_fit: [300, 300]), class: "rounded-full w-100 h-100" %>
+  <%= image_tag @profile.avatar.variant(resize_to_limit: [300, 300]), class: "rounded-full w-100 h-100 " %>
+  <%= image_tag @profile.avatar.variant(resize_to_fill: [300, 300]), class: "rounded-full w-100 h-100 " %>
+  <%= image_tag @profile.avatar.variant(crop: [300, 200, 100, 100]), class: "rounded-full w-100 h-100 " %>
+
+  <%#<%= image_tag @profile.avataor_url %>
   <%= @profile.racket %>
 	<%= @profile.history %>
 	<%= @profile.play_style %>
